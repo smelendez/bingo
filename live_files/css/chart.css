@@ -1,0 +1,89 @@
+body {
+	background-color: #fff;
+}
+#container {
+    background-color: #ffe400;
+	overflow: hidden;
+}
+#map_body {
+	overflow: hidden;
+}
+
+#header {
+    border: 0;
+    background-color: #ffe400;
+	text-align: center;
+}
+	#titleline {
+		margin: 0 0 10px 0;
+	}
+	#header h2 {
+		clear: both;
+		margin: 0 auto;
+		width: 559px;
+		height: 41px;
+		text-indent: -9999px;
+		overflow: hidden;
+		background: url(../img/header_bingo.png) no-repeat;
+		position: relative;
+		top: 5px;
+	}
+
+#meta-container {
+	text-align: center;
+}
+#chart-container {
+    width: 584px;
+    height: 590px;
+	margin: 0 auto;
+}
+	.card {
+	    width: 112px;
+	    height: 112px;
+	    font-size: 12px;
+	    line-height: 16px;
+	    float: left;
+	    margin-left: 4px;
+	    margin-bottom: 4px;
+	    display: table;
+	    background-color: #e6fdff;
+	    background-image: url(../img/piece_bg.png);
+	    text-transform: uppercase;
+		cursor: pointer;
+		}
+
+	}
+	.free {
+	    background-image: url(../img/piece_free.png);
+	}
+	.chip {
+	    background-image: url(../img/piece_chip.png);
+	}
+	.freechip {
+	    background-image: url(../img/piece_free_chip.png);
+	}
+	.card-text {
+	    margin: auto;
+	    text-align: center;
+	    vertical-align: middle;
+	    display: table-cell;
+	    padding: 4px;
+	}
+
+
+
+#bingo-footer {
+	width: 584px;
+	height: 75px;
+    margin: 0 auto 18px auto;
+	padding: 0;
+    position: relative;
+	overflow: hidden;
+	background: url(../img/animals.png) no-repeat -10px 0;
+}
+#yell-button {
+    position: absolute;
+    left: 140px;
+    bottom: 19px;
+}
+

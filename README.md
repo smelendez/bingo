@@ -10,7 +10,7 @@ You're welcome to edit the code and insert your own images as you see fit, thoug
 Customizing the Look
 --------------------
 
-- Download and extract the zip. Or do git clone ...xxxx [PROVIDE INSTALL / DOWNLOAD INSTRUCTIONS]
+- Click downloads in the upper right corner here and download and extract the zip. Or do git clone https://github.com/smelendez/bingo to get your own local copy.
 
 - Figure out where the bingo game will sit on your webserver. Open your favorite text editor and search live_files/embed.html and live_files/printcard.html for the string "mysite.url" and replace with the path to your files. For instance, on our site, we would replace "mysite.url" with "project.wnyc.org/debate-bingo".
 

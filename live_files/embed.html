@@ -1,0 +1,186 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  
+<title>YOUR TITLE GOES HERE</title> 
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/embed.css">
+<link href="css/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/chart.css" />
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/handlebars-1.0.0.beta.6.js"></script>
+<script type="text/javascript" src="js/jquery.url.min.js"></script> 
+<script src="js/miso.ds.deps.ie.min.0.2.1.js"></script>
+<script src="js/jquery-ui-1.8.23.custom.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/buttons.js" type="text/javascript" chartset="utf-8"></script>
+
+<script>
+
+function embedBox() {
+    var $embedbox = $("#embedbox");
+    var $oldopenbox = $openbox;
+    var height = "725";
+    if (typeof embed_size !== "undefined")
+    {
+        height = embed_size;
+    }
+    closebox();
+    $openbox = $('#embedlink img');
+    if($oldopenbox && $openbox.attr('src') == $oldopenbox.attr('src'))
+    {
+        $openbox = false;
+        return;
+    }
+    var embed_url = currentMapUrl();
+    $('#maplink').html(basemap_location);
+    $('#embedcode').html("&lt;iframe src=\""+embed_url+"\" height=\""+height+"\" width=\"600\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe&gt;");
+    $embedbox.show();
+    openbox();
+}
+var mapdrawn = false;
+var printable = false;
+var basemap_location = "http://mysite.url/newcard.html";
+var embedmap_location = "http://mysite.url/embed.html";
+var embed_size = 785;
+</script>
+
+</head> 
+
+<body>
+
+<div id="social">
+    <iframe id="facebook_button" src="http://www.facebook.com/plugins/like.php?app_id=199400463461226&amp;href=http://mysite.url/newcard.html&amp;send=false&amp;layout=button_count&amp;width=56&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;" scrolling="no" frameborder="0" style="border:none;margin-right: 5px; overflow:hidden; width:48px; height: 21px; float:right" allowTransparency="true"></iframe>
+	<div id="twitter_button" style="float:right; width:56px; overflow:hidden; margin-right: 5px">
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mysite.url/newcard.html" data-count="none" data-text="Play bingo with us">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
+</div>
+    
+
+<div id="container">
+	
+	<div id="map_body">
+	    <div id="header">
+	    	<div id="titleline">
+	        	<div id="headerimg">
+	            	<a href="http://mysite.url" target="_blank"><img src="img/header_logo_black.png"></a>
+	        	</div>
+	        	<div id="headertitle">
+                        YOUR TITLE GOES HERE
+	        	</div>
+	    	</div>
+		    <h2>Bingo</h2>
+		</div>
+    
+    <!-- THE CHART -->
+    <div id="meta-container">
+        <div id="chart-container">
+        </div>
+    <div id="tooltip" style="display:none" class="regulartooltip"></div>
+    </div>
+
+    <div id="bingo-footer">
+    	<a id="yell-link" href="#" onclick="validate_bingo();"><img id="yell-button" src="img/yellbingo_disabled.png"></img></a>
+    </div>
+
+    <div id="footerbar">
+	
+        <div id="fullscreenlink" class="footerbutton footerbutton-left">
+            <a href="newcard.html" target="_blank">
+            <img src="img/tools_bingo_new_off.png" ></img>
+            </a>
+        </div>
+        <div id="datalink" class="footerbutton footerbutton-left">
+            <a href="javascript:shareBox();" >
+            <img src="img/tools_bingo_share_off.png"></img>
+            </a>
+        </div>
+        <div id="printlink" class="footerbutton footerbutton-left">
+            <a href="printcard.html" target="_blank">
+            <img src="img/tools_bingo_print_off.png"></img>
+            </a>
+        </div>
+        <div id="creditlink" class="footerbutton footerbutton-right">
+            <a href="javascript:creditBox();" >
+            <img src="img/tools_credits_off.png" ></img>
+            </a>
+        </div>
+        <div id="embedlink" class="footerbutton footerbutton-right">
+            <a href="javascript:embedBox();" >
+            <img src="img/tools_bingo_embed_off.png" ></img>
+            </a>
+        </div>
+    </div>
+
+<div id="creditbox" class="popupbox">
+        <img src="img/header_credits.png"></img>
+        <div class="boxtext">Bingo game structure built by the <a href="http://datanews.wnyc.org" target="_blank">WNYC Data News Team</a>.</div>
+
+        <div class="closebutton">
+            <img src="img/button_close_off.png" id="closecreditbox"></img>
+        </div>
+
+</div>
+    <div id="embedbox" class="popupbox">
+        <img src="img/header_embed.png"></img>
+        <!-- <div class="boxhed">Link to this chart</div>
+        <div class="boxtext" id="maplink"></div> -->
+        <div class="boxhed">Embed Bingo on your site</div>
+        <div class="boxtext" id="embedcode"></div>
+        <div class="closebutton">
+            <img src="img/button_close_off.png" id="closeembedbox"></img>
+        </div>
+    </div>
+
+    <div id="databox" class="popupbox">
+        <div id="sharestuff">
+        </div>
+        <div class="closebutton">
+            <img src="img/button_close_off.png" id="closedatabox"></img>
+        </div>
+    </div>
+
+    </div><!--#map_body-->
+
+</div><!--#container-->
+        
+
+
+
+
+<script type="text/x-handlebars-template" id="share-template">
+		<div class="boxhed">Grab the link to this card, as it appears now</div>
+		<div class="boxtext"><a id="permalink" href="{{permalink}}" target="_blank">{{permalink}}</a>
+		<div class="boxhed"></div>
+                <div class="boxhed">Or share it socially</div>
+            
+        <div class="boxtext" id="twitter-button-holder">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" id="card-tweet" data-text="See my Bingo card" data-url="{{permalink}}" data-count="none" data-hashtags="#debatebingo">Tweet Your Card</a>
+    <iframe id="card-facebook_button" src="http://www.facebook.com/plugins/like.php?app_id=199400463461226&amp;href={{permalink}}&amp;send=false&amp;layout=button_count&amp;width=56&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;" scrolling="no" frameborder="0" style="border:none;margin-right: 5px; overflow:hidden; width:48px; height: 21px; float:left" allowTransparency="true"></iframe>
+
+        </div>
+
+        
+
+</script>
+<script type="text/x-handlebars-template" id="card-template">
+    <div class="card {{chip}}" id="card-{{row}}-{{col}}">
+        <div class="card-text">
+        {{text}}
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="js/this-chart.js"></script>
+
+</body> 
+<!--[IF IE 7]>
+<script>
+$.ready(){
+    $('#footerbar').css("bottom", "1px").css("bottom", "0px");
+
+}
+
+</script>
+<![endif]-->
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+
+  
+<title>YOUR TITLE GOES HERE</title> 
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/embed.css">
+<link href="css/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/chart.css" />
+<link rel="stylesheet" href="css/chartPrint.css" />
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/handlebars-1.0.0.beta.6.js"></script>
+<script type="text/javascript" src="js/jquery.url.min.js"></script> 
+<script src="js/miso.ds.deps.ie.min.0.2.1.js"></script>
+<script src="js/jquery.alerts.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-ui-1.8.23.custom.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/buttons.js" type="text/javascript" chartset="utf-8"></script>
+
+<script>
+
+var basemap_location = "http://mysite.url/newcard.html";
+var embedmap_location = "http://mysite.url/embed.html";
+
+var embed_size = 785;
+var printable = true;
+
+
+</script>
+
+</head> 
+
+
+<body id="printCard">
+	
+<div id="social">
+</div>
+
+
+<div id="container">
+	
+	<div id="map_body">
+		
+	    <div id="header">
+	    	<div id="titleline">
+	        	<div id="headerimg">
+	            	<a href="http://www.mysite.url" target="_blank"><img src="img/header_logo_black.png"></a>
+	        	</div>
+	        	<div id="headertitle">
+                        YOUR TITLE GOES HERE
+	        	</div>
+	    	</div>
+		    <h2><img src="img/print_header_bingo.png" alt="Bingo" /></h2>
+		</div>
+    
+    <!-- THE CHART -->
+    <div id="meta-container">
+        <div id="chart-container"></div>
+    	<div id="tooltip" style="display:none" class="regulartooltip"></div>
+    </div> 
+	
+	<div id="bingo-footer">
+        Made by datanews team TK
+	</div>
+
+    </div><!--#map_body-->
+
+</div><!--#container-->
+
+</body>
+
+
+
+
+<script type="text/x-handlebars-template" id="share-template">
+		<div class="boxhed">Grab the link to this card, as it appears now</div>
+		<div class="boxtext"><a id="permalink" href="{{permalink}}" target="_blank">{{permalink}}</a>
+		<div class="boxhed"></div>
+                <div class="boxhed">Or share it socially</div>
+            
+</script>
+<script type="text/x-handlebars-template" id="card-template">
+    <div class="card {{chip}}" id="card-{{row}}-{{col}}">
+        <div class="card-text">
+        {{text}}
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="js/this-chart.js"></script>
+
+</body> 
+<!--[IF IE 7]>
+<script>
+$.ready(){
+    $('#footerbar').css("bottom", "1px").css("bottom", "0px");
+
+}
+
+</script>
+<![endif]-->
+</html>

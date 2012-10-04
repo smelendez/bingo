@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<title>2012 Presidential Debate Bingo | WNYC</title>
+<script type="text/javascript" src="http://project.wnyc.org/assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://project.wnyc.org/assets/js/jquery.url.min.js"></script> 
+</head>
+<body>
+
+<iframe id="theframe" src="embed.html" width="620px" height="785px" scrolling="no" frameborder="0"></iframe>
+<script type="text/javascript">
+var key = $.url.param("key");
+$('#theframe').attr('src', 'embed.html?key=' + key);
+
+</script>
+</body>
+</html>
