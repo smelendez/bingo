@@ -10,11 +10,11 @@ You're welcome to edit the code and insert your own images as you see fit, thoug
 Customizing the Look
 --------------------
 
-- Click downloads in the upper right corner here and download and extract the zip. Or do git clone https://github.com/smelendez/bingo to get your own local copy.
+- Click downloads in the upper right corner here and download and extract the zip. Or run git clone https://github.com/smelendez/bingo at the command line to get your own local copy.
 
 - Figure out where the bingo game will sit on your webserver. Open your favorite text editor and search live_files/embed.html and live_files/printcard.html for the string "mysite.url" and replace with the path to your files. For instance, on our site, we would replace "mysite.url" with "project.wnyc.org/debate-bingo".
 
-- In live_files/embed.html and live_files/printcard.html, replace "YOUR TITLE GOES HERE" with a title for your bingo game, like "Presidential Debate Bingo."
+- In live_files/embed.html, live_files/newcard.html and live_files/printcard.html, replace "YOUR TITLE GOES HERE" with a title for your bingo game, like "Presidential Debate Bingo."
 
 - In the live_files/img directory, replace "header_logo_black.png" with whatever you want to appear in the upper left of the bingo card. (Or you can delete it altogether and remove the line referencing it from printcard.html and embed.html.)
 
@@ -46,4 +46,11 @@ Final Polishing
 
 Note: Because the bingo game dynamically fetches information from the CSV file from the server, it won't work if you simply open the HTML files. You have to either upload them to a server and try it from there. To simulate that locally, we use Python's built-in SimpleHTTPServer, which you can launch by running "python -m SimpleHTTPServer" in the live_files directory, then going to http://localhost:8000 in your web browser.
 
+Notes
+-----
+
+DISCLAIMER: We wrote this code very quickly, and want to share it quickly, too. So there may be problems and pitfalls
+and can't take responsibility for it failing or causing any problems for you or your systems.
+
+Let us know if you use or improve on it! We're interested. Tweet @datanews, send us a pull request, or email jkeefe@wnyc.org.
 
