@@ -114,7 +114,7 @@ function add_chip(row, col)
     {
         $card.css('background-image', 'url("img/piece_chip.png")');
     }
-    $cardtext.hide();
+    //$cardtext.hide();
 
 }
 function remove_chip(row, col)
@@ -303,7 +303,7 @@ function make_card()
             else {
                 $(this).css('background-image', 'url("img/piece_chip.png")');
             }
-            $('#' + cardid + ' .card-text').hide();
+            //$('#' + cardid + ' .card-text').hide();
         }
         else if($(this).hasClass('free'))
         {
