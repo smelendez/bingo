@@ -18,6 +18,8 @@ Customizing the Look
 
 - In the live_files/img directory, replace "header_logo_black.png" with whatever you want to appear in the upper left of the bingo card. (Or you can delete it altogether and remove the line referencing it from printcard.html and embed.html.)
 
+- In live_files/js/this-chart.js, on line 147, change the "hashtags=debatebingo" parameter in the URL to "hashtags=emmysbingo" or whatever hashtag you want to use for the event. In the live_files/embed.html on line 156, update the hashtag #debatebingo to your new hashtag for this card. 
+
 Setting Up the Tiles
 --------------------
 
